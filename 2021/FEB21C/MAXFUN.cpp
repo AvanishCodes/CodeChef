@@ -8,12 +8,12 @@ using namespace std;                                                        // U
 #define SCC(t) scanf("%c",&t)                                             // Scan a character
 #define SCS(t) scanf("%s",t)                                              // Scan a string
 #define SCF(t) scanf("%f",&t)                                             // Scan a floating point number
-#define SCLF(t) scanf("%l",&t)                                          // Scan a long floating point number 
+#define SCLF(t) scanf("%l",&t)                                          // Scan a long floating point number
 #define MEM(a, b) memset(a, (b), sizeof(a))                                 // Assign b to all values of a
-#define FOR(i, j, k, inc) for (int i=j ; i<k ; i+=inc)                      // for loop implemented starting from j to less than k, incremented by inc(rement) 
+#define FOR(i, j, k, inc) for (int i=j ; i<k ; i+=inc)                      // for loop implemented starting from j to less than k, incremented by inc(rement)
 #define RFOR(i, j, k, dec) for (int i=j ; i>=k ; i-=dec)                    // for loop implemented starting from j to less than k, decremented by dec(rement)
 #define REP(i, j) FOR(i, 0, j, 1)                                           // for loop implemented starting from 0 to less than j, incremented by 1
-#define RREP(i, j) RFOR(i, j, 0, 1)                                         // for loop implemented starting from j to more than 0, decremented by 1     
+#define RREP(i, j) RFOR(i, j, 0, 1)                                         // for loop implemented starting from j to more than 0, decremented by 1
 #define all(cont) cont.begin(), cont.end()                                  // All elements of container starting from the begining and till end
 #define rall(cont) cont.end(), cont.begin()                                 // All elements of the container starting from the end and till the begining
 #define FOREACH(it, l) for (auto it = l.begin(); it != l.end(); it++)       // For each iterator
@@ -35,62 +35,8 @@ typedef map<int,int> MPII;                                                  // M
 typedef set<int> SETI;                                                      // set of Integers
 typedef multiset<int> MSETI;                                                // Multiset of Integers
 
-/* Inline functions */
-// Check if a number is even
-inline bool isEven(int a){
-    if(a&1)
-        return false;
-    return true;
-}
-// Check if the number is odd
-inline bool isOdd(int a){
-    if(a&1)
-        return true;
-    return false;
-}
-// Get the most significant digit of a decimal number
-inline int MSD(int N){
-    return floor(log10(N));
-}
-// Check if the number is a power of 2
-inline bool isPowerOf2(int N){
-    return N&& (!(N&(N-1))); 
-}
-/* End of Inline Functions */
 
-template <typename T> inline void writeInt(T x)         // Write an integer on console
-{
-    int i = 20;
-    char buf[21];
-    // buf[10] = 0;
-    buf[20] = '\n';
-    do
-    {
-        buf[--i] = x % 10 + '0';
-        x/= 10;
-    }while(x);
-    do
-    {
-        putchar(buf[i]);
-    }while (buf[i++] != '\n');
-}
-template <typename T> inline T readInt()                  // Read an Integer
-{
-    T n = 0, s = 1;
-    char p = getchar();
-    if(p == '-')
-        s = -1;
-    while ((p < '0' || p > '9') && p != EOF && p != '-')
-        p = getchar();
-    if(p == '-')
-        s = -1, p = getchar();
-    while(p >= '0' && p <= '9')
-    {
-        n = (n << 3) + (n << 1) + (p - '0');
-        p = getchar();
-    }
-    return n * s;
-}
+
 void testCase()
 {
     int n;
